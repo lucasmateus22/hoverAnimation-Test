@@ -1,0 +1,123 @@
+body{
+    background-color: black;
+}
+.caixa{
+    display: flex;
+    flex-direction: row;
+    background-color: cadetblue;
+    position: relative;
+}
+.caixa img{
+    height: 150px;
+    width: 150px;
+    background-color: coral;
+    z-index: 9999;
+}
+.caixa:hover .descricaoCaixa{
+    position: relative;
+    flex-direction: column;
+    width: 200px;
+    background-color: tan;
+    padding: 5px;
+    animation: showing 1s linear;
+    transition: 1s;
+}
+.text{
+    opacity: 0;
+}
+.caixa:hover .text{
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: 2s;
+}
+@keyframes texto {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes showing {
+    0%{
+        right: 200;
+    }
+    100%{
+        right: 0;
+    }
+}
+/*-----------------------------------------------------------------------*/
+.caixa-display{
+    display: flex;
+    flex-direction: row;
+    background-color: thistle;
+}
+.caixa-display img{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(99, 84, 66);
+}
+.descricaoCaixa-display{
+    display: none;
+    padding: 5px;
+    width: 200px;
+    background-color: rgb(0, 143, 95);
+}
+.caixa-display:hover .descricaoCaixa-display{
+    display: block;
+    position: relative;
+}
+.text-display{
+    display: none;
+    opacity: 0;
+    transition: 2s;
+}
+.caixa-display:hover .text-display{
+    display: block;
+    opacity: 1;
+    transition: 2s;
+    position: relative;
+}
+/*------------------------------------------------*/
+.caixa-animation{
+    display: flex;
+    flex-direction: row;
+    background-color: yellow;
+}
+.caixa-animation img{
+    z-index: 9999;
+    height: 150px;
+    width: 150px;
+    background-color: steelblue;
+}
+.descricaoCa{
+    display: none;
+    width: 200px;
+    padding: 5px;
+    background-color: rgb(182, 162, 138);
+    position: relative;
+    animation-name: disp;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    transition: 1s;
+}
+html.bloc .descricaoCa{
+    display: block;
+}
+.caixa-animation:hover .descricaoCa{
+    display: block;
+}
+@keyframes disp {
+    0%{
+        right: 150px;
+        width: 150px;
+    }
+    100%{
+        right: 0;
+        width: 200px;
+    }
+}
